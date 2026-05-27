@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Mom">
+  <rect x="40" y="70" width="16" height="22" rx="7" fill="#F2D7B7"></rect>
+  <path d="M14 44 Q16 14 48 12 Q80 14 82 44 L82 80 Q70 72 64 64 L32 64 Q26 72 14 80 z" fill="#3A2A1F"></path>
+  <ellipse cx="48" cy="50" rx="26" ry="28" fill="#F2D7B7"></ellipse>
+  <path d="M22 32 Q48 22 74 32 Q66 26 56 26 Q44 26 22 32z" fill="#3A2A1F"></path>
+  <circle cx="40" cy="50" r="2.6" fill="#2B2A35"></circle>
+  <circle cx="56" cy="50" r="2.6" fill="#2B2A35"></circle>
+  <path d="M40 62 Q48 68 56 62" stroke="#2B2A35" stroke-width="2.8" stroke-linecap="round" fill="none"></path>
+  <circle cx="32" cy="58" r="3.5" fill="#F4B6C2" opacity=".7"></circle>
+  <circle cx="64" cy="58" r="3.5" fill="#F4B6C2" opacity=".7"></circle>
+</svg>

@@ -1,0 +1,108 @@
+/* =========================================================================
+   Weather · weather-gradients.css
+   Per-condition background for the big weather card. Two-stop gradients,
+   pastel range. Each pair is tuned so neutral-900 ink reads ≥ 7:1 on the
+   lightest stop, and white reads ≥ 4.5:1 on the darkest stop.
+
+   Variables expose both stops + a ready-made `linear-gradient(...)` value
+   you can drop on `background:`.
+   ========================================================================= */
+
+:root {
+  /* clear — bright daylight */
+  --wx-clear-from:        #FFE3B0;
+  --wx-clear-to:          #FFC987;
+  --wx-clear-ink:         #3F2604;          /* secondary-900 */
+  --wx-clear:             linear-gradient(160deg, var(--wx-clear-from) 0%, var(--wx-clear-to) 100%);
+
+  /* partly_cloudy — soft mixed sky */
+  --wx-partly-cloudy-from:#DDEEF7;
+  --wx-partly-cloudy-to:  #F7E7BE;
+  --wx-partly-cloudy-ink: #1F1E1B;
+  --wx-partly-cloudy:     linear-gradient(160deg, var(--wx-partly-cloudy-from) 0%, var(--wx-partly-cloudy-to) 100%);
+
+  /* cloudy — overcast warm gray */
+  --wx-cloudy-from:       #E7E6EE;
+  --wx-cloudy-to:         #C9C8D6;
+  --wx-cloudy-ink:        #1F1E1B;
+  --wx-cloudy:            linear-gradient(160deg, var(--wx-cloudy-from) 0%, var(--wx-cloudy-to) 100%);
+
+  /* fog — milky, low-contrast */
+  --wx-fog-from:          #EDEAE2;
+  --wx-fog-to:            #CFCEC8;
+  --wx-fog-ink:           #1F1E1B;
+  --wx-fog:               linear-gradient(160deg, var(--wx-fog-from) 0%, var(--wx-fog-to) 100%);
+
+  /* drizzle — pale rainy blue */
+  --wx-drizzle-from:      #D9E7F2;
+  --wx-drizzle-to:        #A6BFD6;
+  --wx-drizzle-ink:       #122845;
+  --wx-drizzle:           linear-gradient(160deg, var(--wx-drizzle-from) 0%, var(--wx-drizzle-to) 100%);
+
+  /* rain — deeper blue, still readable */
+  --wx-rain-from:         #B6CFE3;
+  --wx-rain-to:           #6E94B8;          /* darker stop — pair with white */
+  --wx-rain-ink:          #FFFFFF;
+  --wx-rain-ink-on-light: #122845;
+  --wx-rain:              linear-gradient(160deg, var(--wx-rain-from) 0%, var(--wx-rain-to) 100%);
+
+  /* snow — icy lavender to near-white */
+  --wx-snow-from:         #F1F4F9;
+  --wx-snow-to:           #D7DCE8;
+  --wx-snow-ink:          #1F1E1B;
+  --wx-snow:              linear-gradient(160deg, var(--wx-snow-from) 0%, var(--wx-snow-to) 100%);
+
+  /* thunderstorm — dramatic purple-gray, dark by design */
+  --wx-thunderstorm-from: #5A4F76;
+  --wx-thunderstorm-to:   #2E2740;
+  --wx-thunderstorm-ink:  #FFFFFF;
+  --wx-thunderstorm:      linear-gradient(160deg, var(--wx-thunderstorm-from) 0%, var(--wx-thunderstorm-to) 100%);
+}
+
+/* ----- Dark-mode tweak: deepen the lightest pastels so they don't glare
+   on an OLED screen at night. Keeps the same hue family.            ----- */
+:root[data-theme="dark"] {
+  --wx-clear-from:        #6E5827;
+  --wx-clear-to:          #B4823B;
+  --wx-clear-ink:         #FEF5E2;
+
+  --wx-partly-cloudy-from:#2B3A4C;
+  --wx-partly-cloudy-to:  #4E4830;
+  --wx-partly-cloudy-ink: #F2F2F7;
+
+  --wx-cloudy-from:       #2E2F3D;
+  --wx-cloudy-to:         #45465A;
+  --wx-cloudy-ink:        #F2F2F7;
+
+  --wx-fog-from:          #2B2A2E;
+  --wx-fog-to:            #3F3E44;
+  --wx-fog-ink:           #F2F2F7;
+
+  --wx-drizzle-from:      #233346;
+  --wx-drizzle-to:        #3B5878;
+  --wx-drizzle-ink:       #F2F2F7;
+
+  --wx-rain-from:         #1E2C40;
+  --wx-rain-to:           #38567A;
+  --wx-rain-ink:          #F2F2F7;
+  --wx-rain-ink-on-light: #F2F2F7;
+
+  --wx-snow-from:         #303544;
+  --wx-snow-to:           #4A506A;
+  --wx-snow-ink:          #F2F2F7;
+
+  --wx-thunderstorm-from: #2A2240;
+  --wx-thunderstorm-to:   #110D1F;
+  --wx-thunderstorm-ink:  #F2F2F7;
+}
+
+/* Utility shorthands so cards just do <div class="wx wx--rain"> … </div> */
+.wx              { background: var(--wx-clear); color: var(--wx-clear-ink); }
+.wx--clear       { background: var(--wx-clear);        color: var(--wx-clear-ink); }
+.wx--partly_cloudy{background: var(--wx-partly-cloudy); color: var(--wx-partly-cloudy-ink); }
+.wx--cloudy      { background: var(--wx-cloudy);       color: var(--wx-cloudy-ink); }
+.wx--fog         { background: var(--wx-fog);          color: var(--wx-fog-ink); }
+.wx--drizzle     { background: var(--wx-drizzle);      color: var(--wx-drizzle-ink); }
+.wx--rain        { background: var(--wx-rain);         color: var(--wx-rain-ink); }
+.wx--snow        { background: var(--wx-snow);         color: var(--wx-snow-ink); }
+.wx--thunderstorm{ background: var(--wx-thunderstorm); color: var(--wx-thunderstorm-ink); }

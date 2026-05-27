@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#2B2A35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Walk time">
+  <circle cx="24" cy="24" r="16"></circle>
+  <path d="M24 24 V14"></path>
+  <path d="M24 24 L31 27"></path>
+  <path d="M24 6 V8 M24 40 V42 M6 24 H8 M40 24 H42"></path>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#2B2A35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Sunglasses">
+  <rect x="6" y="18" width="14" height="12" rx="6"></rect>
+  <rect x="28" y="18" width="14" height="12" rx="6"></rect>
+  <path d="M20 22 H28"></path>
+  <path d="M6 22 L2 18 M42 22 L46 18"></path>
+</svg>

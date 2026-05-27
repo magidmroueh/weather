@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Drizzle">
+  <g fill="#C9C8D6">
+    <circle cx="18" cy="22" r="10"></circle>
+    <circle cx="32" cy="16" r="12"></circle>
+    <circle cx="46" cy="22" r="10"></circle>
+    <rect x="18" y="22" width="28" height="12" rx="6"></rect>
+  </g>
+  <g fill="#5FA0E0">
+    <path d="M22 40 C19 44 19 46 22 48 C25 46 25 44 22 40 Z"></path>
+    <path d="M32 44 C29 48 29 50 32 52 C35 50 35 48 32 44 Z"></path>
+    <path d="M42 40 C39 44 39 46 42 48 C45 46 45 44 42 40 Z"></path>
+  </g>
+</svg>

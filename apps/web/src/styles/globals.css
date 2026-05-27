@@ -1,0 +1,100 @@
+@import './tokens-light.css';
+@import './tokens-dark.css';
+@import './weather-gradients.css';
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Quicksand', system-ui, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --color-primary-50: #F0F7FF;
+  --color-primary-100: #DCEAFB;
+  --color-primary-200: #BBD8F5;
+  --color-primary-300: #8FBEEC;
+  --color-primary-400: #5FA0E0;
+  --color-primary-500: #3A82CC;
+  --color-primary-600: #2E6AAD;
+  --color-primary-700: #234F85;
+
+  --color-secondary-100: #FFEFCB;
+  --color-secondary-200: #FFE0A0;
+  --color-secondary-300: #FFC96D;
+  --color-secondary-500: #D98B1F;
+  --color-secondary-700: #8A540A;
+  --color-secondary-900: #3F2604;
+
+  --color-success-100: #D2F1DC;
+  --color-success-500: #2F9457;
+  --color-success-600: #237744;
+  --color-success-700: #1A5A33;
+
+  --color-warning-100: #FFE3C2;
+  --color-warning-500: #D26A0E;
+  --color-warning-700: #7B3D06;
+
+  --color-danger-100: #FFD8D8;
+  --color-danger-500: #D33E3E;
+  --color-danger-600: #AC2B2B;
+  --color-danger-700: #821F1F;
+
+  --color-neutral-50: #FBF7F2;
+  --color-neutral-100: #F4EFE7;
+  --color-neutral-200: #EDE4D8;
+  --color-neutral-500: #8B8275;
+  --color-neutral-700: #4D4940;
+  --color-neutral-900: #1F1E1B;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(120% 90% at 88% 8%, #FFE6BF 0%, transparent 55%),
+    radial-gradient(95% 100% at 6% 90%, #D9EAFE 0%, transparent 60%),
+    linear-gradient(160deg, #FBF1E1 0%, #F2E2F0 50%, #DDEEF7 100%);
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+:root[data-theme='dark'] body {
+  background:
+    radial-gradient(120% 90% at 88% 8%, #2A2240 0%, transparent 55%),
+    radial-gradient(95% 100% at 6% 90%, #102036 0%, transparent 60%),
+    linear-gradient(160deg, #1B1C2A 0%, #232536 50%, #1B1C2A 100%);
+  background-attachment: fixed;
+}
+
+button,
+[role='button'],
+a[role='button'] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hide scrollbars on the family strip but keep wheel/touch scroll. */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
