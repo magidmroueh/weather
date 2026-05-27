@@ -37,24 +37,21 @@ Get a free Gemini API key at https://aistudio.google.com/apikey.
 
 ## Deploy to Vercel
 
-The repo ships a checked-in `vercel.json` and an `api/index.mjs` adapter that wraps the TanStack Start SSR fetch handler — `bun run build` produces `apps/web/dist/{client,server}` and Vercel serves the client assets statically while routing every other path through the function.
+The repo ships `apps/web/vercel.json` and `apps/web/api/index.mjs` — a tiny adapter that re-exports the TanStack Start SSR fetch handler. `bun run build` produces `apps/web/dist/{client,server}`; Vercel serves the client assets statically and routes everything else through the function.
+
+**Vercel dashboard settings (one-time):**
+- **Root Directory:** `apps/web`
+- **Environment Variables:** add `GEMINI_API_KEY` (production) — server-only, no `VITE_` prefix so it never reaches the browser.
+
+Everything else (install / build / output / function config / rewrites) is encoded in `apps/web/vercel.json` and runs from the monorepo root via `cd ../..`, so Bun installs the entire workspace and Turbo builds `@weather/shared` before `@weather/web`.
+
+Or, from the CLI:
 
 ```bash
-bunx vercel link          # first time — picks a Hobby project
+bunx vercel link          # first time — picks a Hobby project, root = apps/web
 bunx vercel env add GEMINI_API_KEY production
 bunx vercel --prod
 ```
-
-Or import the GitHub repo in the Vercel dashboard. The settings encoded in `vercel.json`:
-
-| Setting           | Value                          |
-|-------------------|--------------------------------|
-| Install command   | `bun install`                  |
-| Build command     | `bun run build`                |
-| Output directory  | `apps/web/dist/client`         |
-| Function entry    | `api/index.mjs`                |
-
-The only environment variable you need to add is `GEMINI_API_KEY` (server-only — not prefixed with `VITE_`, so it stays out of the browser bundle).
 
 ## Structure
 
