@@ -40,7 +40,7 @@ async function generate(
 }
 
 export const recommend = createServerFn({ method: 'POST' })
-  .inputValidator((data: unknown) => RecommendationRequestSchema.parse(data))
+  .validator((data: unknown) => RecommendationRequestSchema.parse(data))
   .handler(async ({ data }): Promise<RecommendationResponse> => {
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {

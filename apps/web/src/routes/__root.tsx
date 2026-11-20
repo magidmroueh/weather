@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 import type { ReactNode } from 'react';
+import type { ErrorComponentProps } from '@tanstack/react-router';
 import {
   Outlet,
   createRootRouteWithContext,
@@ -61,7 +62,8 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   );
 }
 
-function RootErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function RootErrorComponent({ error, reset }: ErrorComponentProps) {
+  const message = error instanceof Error ? error.message : 'An unexpected error occurred.';
   return (
     <main className="mx-auto flex min-h-screen max-w-md flex-col items-center justify-center gap-4 px-6 text-center">
       <svg
@@ -81,7 +83,7 @@ function RootErrorComponent({ error, reset }: { error: Error; reset: () => void 
       <h1 className="font-display text-[24px] font-bold tracking-[-0.005em] text-[var(--ink)]">
         Something went wrong
       </h1>
-      <p className="font-sans text-[14px] text-[var(--ink-soft)]">{error.message}</p>
+      <p className="font-sans text-[14px] text-[var(--ink-soft)]">{message}</p>
       <button
         type="button"
         onClick={reset}
