@@ -1,5 +1,7 @@
 # Weather
 
+[Open the live Weather app](https://weather-six-pi-99.vercel.app)
+
 A friendly, cartoon-styled, mobile-first web app that gives daily outfit suggestions to your whole family — including walk-readiness advice for pets — based on local weather.
 
 Frontend-only React app deployed to Vercel; a single server function keeps the Gemini key off the client.
